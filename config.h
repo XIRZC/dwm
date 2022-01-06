@@ -94,10 +94,10 @@ static const char *sktogglecmd[]  = { "/home/mrxir/scripts/sck-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
-//static const char *setcolemakcmd[]  = { "/home/mrxir/scripts/setxmodmap-colemak.sh", NULL };
-//static const char *setqwertycmd[]  = { "/home/mrxir/scripts/setxmodmap-qwerty.sh", NULL };
+static const char *setcolemakcmd[]  = { "/home/mrxir/scripts/setxmodmap-colemak.sh", NULL };
+static const char *setqwertycmd[]  = { "/home/mrxir/scripts/setxmodmap-qwerty.sh", NULL };
 
-//static const char *suspendcmd[]  = { "/home/mrxir/scripts/suspend.sh", NULL };
+static const char *suspendcmd[]  = { "/home/mrxir/scripts/suspend.sh", NULL };
 
 static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 
@@ -106,10 +106,10 @@ static Key keys[] = {
 	{ MODKEY,              XK_p,                    spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,    XK_Return,               spawn,          {.v = termcmd } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = browsercmd } },
-//{ MODKEY|ShiftMask,    XK_w,                    spawn,          {.v = setqwertycmd } },
-//{ MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
-//{ MODKEY|ShiftMask,    XK_p,                    spawn,          {.v = suspendcmd } },
-//	{ MODKEY|ControlMask,  XK_s,                    spawn,          {.v = sktogglecmd } },
+{ MODKEY|ShiftMask,      XK_n,                    spawn,          {.v = setqwertycmd } },
+{ MODKEY|ShiftMask,      XK_m,                    spawn,          {.v = setcolemakcmd } },
+{ MODKEY|ShiftMask,      XK_e,                    spawn,          {.v = suspendcmd } },
+{ MODKEY|ShiftMask,      XK_s,                    spawn,          {.v = sktogglecmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
