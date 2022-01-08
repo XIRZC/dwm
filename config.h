@@ -94,6 +94,7 @@ static const char *mutevol[] = { "/home/mrxir/scripts/vol-toggle.sh",  NULL };
 
 static const char *wpcmd[]  = { "/home/mrxir/scripts/wp-change.sh", NULL };
 static const char *sktogglecmd[]  = { "/home/mrxir/scripts/sck-tog.sh", NULL };
+static const char *qvrtogglecmd[]  = { "/home/mrxir/scripts/qvr-tog.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x24", NULL };
 
@@ -116,6 +117,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,    XK_m,                    spawn,          {.v = setcolemakcmd } },
   { MODKEY|ShiftMask,    XK_e,                    spawn,          {.v = suspendcmd } },
   { MODKEY|ShiftMask,    XK_s,                    spawn,          {.v = sktogglecmd } },
+  { MODKEY|ShiftMask,    XK_v,                    spawn,          {.v = qvrtogglecmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
