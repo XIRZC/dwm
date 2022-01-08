@@ -81,7 +81,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 // static const char *termcmd[]  = { "alacritty", NULL };
-static const char *termcmd[]  = { "kitty", NULL };
+static const char *termcmdkitty[]  = { "kitty", NULL };
+static const char *termcmdalacritty[]  = { "alacritty", NULL };
 // static const char *dmenucmd[] = { "rofi", "-no-lazy-grab", "-show", "drun", "-modi", "drun", "-theme", "~/.config/rofi/launchers/misc/row_dock.rasi", NULL };
 static const char *browsercmd[]  = { "firefox", NULL };
 static const char *dmenucmd[] = { "rofi", "-no-lazy-grab", "-show", "drun", "-modi", "drun", "-theme", ".config/rofi/launchers/misc/kde_simplemenu", NULL };
@@ -104,12 +105,13 @@ static const char *screenshotcmd[] = { "flameshot", "gui", NULL };
 static Key keys[] = {
 	/* modifier            key                      function        argument */
 	{ MODKEY,              XK_p,                    spawn,          {.v = dmenucmd } },
-	{ MODKEY|ShiftMask,    XK_Return,               spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,    XK_Return,               spawn,          {.v = termcmdalacritty } },
+	{ ControlMask|ShiftMask,  XK_Return,               spawn,          {.v = termcmdkitty } },
 	{ MODKEY,              XK_b,                    spawn,          {.v = browsercmd } },
-{ MODKEY|ShiftMask,      XK_n,                    spawn,          {.v = setqwertycmd } },
-{ MODKEY|ShiftMask,      XK_m,                    spawn,          {.v = setcolemakcmd } },
-{ MODKEY|ShiftMask,      XK_e,                    spawn,          {.v = suspendcmd } },
-{ MODKEY|ShiftMask,      XK_s,                    spawn,          {.v = sktogglecmd } },
+  { MODKEY|ShiftMask,      XK_n,                    spawn,          {.v = setqwertycmd } },
+  { MODKEY|ShiftMask,      XK_m,                    spawn,          {.v = setcolemakcmd } },
+  { MODKEY|ShiftMask,      XK_e,                    spawn,          {.v = suspendcmd } },
+  { MODKEY|ShiftMask,      XK_s,                    spawn,          {.v = sktogglecmd } },
 	{ 0,                   XF86XK_AudioLowerVolume, spawn,          {.v = downvol } },
 	{ 0,                   XF86XK_AudioMute,        spawn,          {.v = mutevol } },
 	{ 0,                   XF86XK_AudioRaiseVolume, spawn,          {.v = upvol   } },
@@ -168,7 +170,7 @@ static Button buttons[] = {
 	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
 	{ ClkWinTitle,          0,              Button1,        togglewin,      {0} },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
-	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
+	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmdalacritty } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
