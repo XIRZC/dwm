@@ -52,8 +52,6 @@ static const Rule rules[] = {
 	{ "gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "yesplaymusic",     NULL,       NULL,       0,            1,           -1 },
 	{ "quemu-system-i386", NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "chromium",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
 
 /* layout(s) */
